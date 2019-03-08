@@ -1,9 +1,3 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -15,6 +9,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' } 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'alessandroyorba/sidonia'
+Plug 'dikiaap/minimalist'
+Plug 'sts10/vim-pink-moon'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -41,11 +38,12 @@ autocmd vimenter * NERDTree
 nnoremap <F2> :NERDTree<CR>
 
 "Visual customization
-colorscheme gruvbox
-set background=dark
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ }
+"set termguicolors
+colorscheme jellybeans
+"set background=dark
+"let g:lightline = {
+"      \ 'colorscheme': 'PaperColor',
+"      \ }
 let g:gruvbox_termcolors = '256' 
 
 "Paste and nopaste mode
